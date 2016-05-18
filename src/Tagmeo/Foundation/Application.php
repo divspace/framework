@@ -4,7 +4,7 @@ namespace Tagmeo\Foundation;
 
 class Application
 {
-    const VERSION = '0.0.1';
+    const VERSION = '0.0.2';
 
     public static $appDir = 'app';
     public static $assetDir = 'assets';

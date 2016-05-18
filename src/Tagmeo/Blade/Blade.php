@@ -5,6 +5,8 @@ namespace Tagmeo\Blade;
 use Illuminate\Filesystem\Filesystem;
 use Tagmeo\Foundation\Application;
 
+require ABSPATH.'/wp-admin/includes/plugin.php';
+
 class Blade
 {
     public function __construct()
