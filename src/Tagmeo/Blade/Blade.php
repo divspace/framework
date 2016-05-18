@@ -15,10 +15,11 @@ class Blade
             activate_plugin($plugin);
         }
 
-        $this->addFilters()
+        $this->addFilters();
     }
 
-    private function addFilters() {
+    private function addFilters()
+    {
         add_filter('bladerunner/cache/permission', function () {
             return 755;
         });
