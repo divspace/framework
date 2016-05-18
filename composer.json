@@ -1,0 +1,51 @@
+{
+  "name": "tagmeo/framework",
+  "description": "The Tagmeo framework.",
+  "license": "MIT",
+  "homepage": "https://tagmeo.com",
+  "authors": [{
+    "name": "Kyle Anderson",
+    "email": "kyle@divspace.com",
+    "homepage": "https://divspace.com"
+  }],
+  "keywords": [
+    "tagmeo", "tagmeo", "framework"
+  ],
+  "support": {
+    "issues": "https://github.com/tagmeo/framework/issues",
+    "source": "https://github.com/tagmeo/framework"
+  },
+  "require": {
+    "php": ">=5.5.9",
+    "ext-mbstring": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-tokenizer": "*",
+    "guzzlehttp/guzzle": "^6.2",
+    "illuminate/container": "^5.2",
+    "illuminate/events": "^5.2",
+    "illuminate/filesystem": "^5.2",
+    "illuminate/support": "^5.2",
+    "illuminate/view": "^5.2",
+    "monolog/monolog": "^1.19",
+    "nesbot/carbon": "^1.21",
+    "oscarotero/env": "^1.0",
+    "roots/wp-password-bcrypt": "~1.0.0",
+    "symfony/console": "^3.0",
+    "symfony/finder": "^3.0",
+    "symfony/process": "^3.0",
+    "vlucas/phpdotenv": "^2.0.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8|~5.3",
+    "squizlabs/php_codesniffer": "^2.5.1"
+  },
+  "autoload": {
+    "files": [
+      "src/Tagmeo/Blade/helpers.php"
+    ],
+    "psr-4": {
+      "Tagmeo\\": "src/Tagmeo/"
+    }
+  }
+}
