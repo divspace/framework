@@ -2,7 +2,6 @@
 
 namespace Tagmeo\Console\Commands;
 
-use Tagmeo\App;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Console\Input\InputOption;
@@ -10,6 +9,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\ProcessUtils;
 use Symfony\Component\Process\PhpExecutableFinder;
+use Tagmeo\Foundation\Application;
 
 class ServeCommand extends Command
 {
@@ -28,7 +28,7 @@ class ServeCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $basePath = App::basePath();
+        $basePath = Application::basePath();
 
         chdir($basePath);
 

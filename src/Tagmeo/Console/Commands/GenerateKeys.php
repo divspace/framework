@@ -2,8 +2,8 @@
 
 namespace Tagmeo\Console\Commands;
 
-use Tagmeo\App;
 use Illuminate\Filesystem\Filesystem;
+use Tagmeo\Foundation\Application;
 use Tagmeo\Console\Commands\SetupCommand;
 
 class GenerateKeys
@@ -31,7 +31,7 @@ class GenerateKeys
             'SECURE_AUTH_SALT='.$this->generateRandomKey().PHP_EOL
         ];
 
-        $this->file->append(App::environmentFile(), $data);
+        $this->file->append(Application::environmentFile(), $data);
     }
 
     protected function generateRandomKey()

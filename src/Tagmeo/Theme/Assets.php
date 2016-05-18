@@ -2,7 +2,7 @@
 
 namespace Tagmeo\Theme;
 
-use Tagmeo\App;
+use Tagmeo\Foundation\Application;
 
 class Assets
 {
@@ -10,7 +10,7 @@ class Assets
 
     public function __construct()
     {
-        $this->elixir = $this->getJson(App::basePath('elixir.json'));
+        $this->elixir = $this->getJson(Application::basePath('elixir.json'));
 
         add_action('wp_enqueue_scripts', function () {
             foreach ($this->elixir as $key => $value) {
@@ -63,7 +63,7 @@ class Assets
         static $manifest = null;
 
         if (is_null($manifest)) {
-            $manifest = json_decode(file_get_contents(App::assetPath('rev-manifest.json')), true);
+            $manifest = json_decode(file_get_contents(Application::assetPath('rev-manifest.json')), true);
         }
 
         if (isset($manifest[$file])) {
