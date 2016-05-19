@@ -2,9 +2,9 @@
 
 namespace Tagmeo\Console\Commands;
 
-use Tagmeo\App;
 use Illuminate\Filesystem\Filesystem;
 use Tagmeo\Console\Commands\SetupCommand;
+use Tagmeo\Foundation\Application;
 
 class UpdateEnvFile
 {
@@ -43,7 +43,7 @@ class UpdateEnvFile
         $disableCronjob = $this->command->output->choice('Disable the WordPress cronjob?', ['yes', 'no'], 'yes');
         $disableFileEditing = $this->command->output->choice('Disable file editing in the backend?', ['yes', 'no'], 'yes');
 
-        $envFile = App::environmentFile();
+        $envFile = Application::environmentFile();
 
         if ($this->file->exists($envFile)) {
             $this->command->output->warning('You are about to overwrite the existing .env file!');
@@ -53,7 +53,7 @@ class UpdateEnvFile
             }
         }
 
-        $vagrantFile = App::basePath('Vagrantfile');
+        $vagrantFile = Application::basePath('Vagrantfile');
 
         if ($this->file->exists($vagrantFile)) {
             $data = $this->file->get($vagrantFile);
