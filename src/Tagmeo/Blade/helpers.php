@@ -3,9 +3,11 @@
 if (!function_exists('blade')) {
     function blade(string $view, $data = [])
     {
-        $bladepath = apply_filters('bladerunner/template/bladepath', get_stylesheet_directory());
+        $bladePath = apply_filters(
+            'bladerunner/template/bladepath', Tagmeo\Foundation\Application::resourcePath('views')
+        );
 
-        $blade = new \Bladerunner\Blade($bladepath, \Bladerunner\Cache::path());
+        $blade = new Bladerunner\Blade($bladePath, Bladerunner\Cache::path());
 
         echo $blade->view()->make($view, $data)->render();
     }
