@@ -9,11 +9,15 @@ require ABSPATH.'/wp-admin/includes/plugin.php';
 
 class Blade
 {
+    protected $file;
+
     public function __construct()
     {
+        $this->file = new Filesystem;
+
         $plugin = Application::pluginPath('bladerunner/bladerunner.php');
 
-        if (!is_plugin_active($plugin) && Filesystem::exists($plugin)) {
+        if (!is_plugin_active($plugin) && $this->file->exists($plugin)) {
             activate_plugin($plugin);
         }
 
