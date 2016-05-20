@@ -3,8 +3,8 @@
 namespace Tagmeo\Console\Commands;
 
 use Illuminate\Filesystem\Filesystem;
-use Tagmeo\Foundation\Application;
 use Tagmeo\Console\Commands\SetupCommand;
+use Tagmeo\Foundation\Application;
 
 class GenerateKeys
 {

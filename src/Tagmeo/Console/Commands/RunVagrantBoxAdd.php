@@ -2,8 +2,8 @@
 
 namespace Tagmeo\Console\Commands;
 
-use Tagmeo\Console\Console;
 use Symfony\Component\Process\Process;
+use Tagmeo\Console\Console;
 use Tagmeo\Console\Commands\SetupCommand;
 
 class RunVagrantBoxAdd
