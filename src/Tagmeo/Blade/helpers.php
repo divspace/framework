@@ -3,12 +3,20 @@
 if (!function_exists('blade')) {
     function blade(string $view, $data = [])
     {
-        $bladePath = apply_filters(
-            'bladerunner/template/bladepath', Tagmeo\Foundation\Application::resourcePath('views')
-        );
+        $cachePath = Bladerunner\Cache::path();
+        $bladePath = Tagmeo\Foundation\Application::resourcePath('views');
 
-        $blade = new Bladerunner\Blade($bladePath, Bladerunner\Cache::path());
+        if (defined('WP_DEBUG') && WP_DEBUG === true) {
+            (new Illuminate\Filesystem\Filesystem)->delete(function () {
+                $this->files($cachePath);
+            });
+        }
 
-        echo $blade->view()->make($view, $data)->render();
+        $bladePath = apply_filters('bladerunner/template/bladepath', $bladePath);
+
+        echo (new Bladerunner\Blade($bladePath, $cachePath))
+            ->view()
+            ->make($view, $data)
+            ->render();
     }
 }
