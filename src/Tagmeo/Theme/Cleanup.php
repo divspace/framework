@@ -116,7 +116,7 @@ class Cleanup
                 unset($headers['X-Pingback']);
             }
 
-            return headers;
+            return $headers;
         }, 10, 1);
 
         add_filter('rewrite_rules_array', function ($rules) {
