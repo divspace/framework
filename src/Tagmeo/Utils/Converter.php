@@ -28,7 +28,7 @@ class Converter
         }
     }
 
-    public static function convertArrayToQueryString($params = array())
+    public static function convertArrayToQueryString($params = [])
     {
         $qs = '';
         $params = Utils::ensureArray($params);
